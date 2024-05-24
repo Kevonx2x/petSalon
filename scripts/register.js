@@ -36,23 +36,31 @@ let petWorld = {
     ]
 }
 
+function displayNames() {
+    let names= "";
 
+    for (let i = 0; i <3; i++) {
+        names+=`<p> ${petWorld.pets[i].name}</p>`;
+        console.log(names);
+    }
+
+    document.getElementById("petNames").innerHTML=names;
+
+}
+
+displayNames();
 
 function quantity() {
 let sum = 0;
 
-for (let i = 0; i < petWorld.pets.length; i++) {
-        sum += 1;
-        let petQuantity = document.getElementById(`quantity`)
-    }
-
-console.log("Sum", sum);
+for (let i = 0; i <petWorld.pets.length; i++) {
+        sum = i + 1;
+        // document.getElementById("quantity").innerHTML;
+        console.log("Pet Number: ", sum);
+        // console.log("i", i);
 }
+    }
 
 quantity();
 
-function  petNames() {
-    
-}
 
-// let names = document.getElementById(`client-list`);
