@@ -1,66 +1,42 @@
-// let petSALON = {
-//     name:"The Fashion pet",
-//     phone:"555-555-5555", 
-//     hours:{
-//         open:"9:00 am",
-//         close:"8:00 pm",
-//     },
-//     pets:[]
-// }
-
-let petWorld = {
-    pets:[
-        {
-        name: "Tom",
-        age: 6,
-        gender: "Male",
-        service: "Grooming",
-        breed: "Cat",
-        },
-
-        {
-        name: "Jerry",
-        age: 8,
-        gender: "Male",
-        service: "Grooming",
-        breed: "Mouse",
-        },
-
-        {
-        name: "Spike",
-        age: 10,
-        gender: "Male",
-        service: "Grooming",
-        breed: "Dog",
-        }
-    ]
+let petSALON = {
+    name:"The Fashion pet",
+    phone:"555-555-5555", 
+    hours:{
+        open:"9:00 am",
+        close:"8:00 pm",
+    },
+    pets:[]
 }
 
-function displayNames() {
-    let names= "";
-
-    for (let i = 0; i <3; i++) {
-        names+=`<p> ${petWorld.pets[i].name}</p>`;
-        console.log(names);
-    }
-
-    document.getElementById("petNames").innerHTML=names;
-
+// constructor
+function Pet(name, age, gender, breed, service){
+    // properties = parameter
+    this.name=name;
+    this.age=age;
+    this.gender=gender;
+    this.breed=breed;
+    this.service=service;
 }
 
-displayNames();
+function register(){
+    let inputName = document.getElementById("txtName").value;
+    let inputAge = document.getElementById("txtAge").value;
+    let inputGender = document.getElementById("txtGender").value;
+    let inputBreed = document.getElementById("txtBreed").value;
+    let inputService = document.getElementById("txtService").value;
 
-function quantity() {
-let sum = 0;
-
-for (let i = 0; i <petWorld.pets.length; i++) {
-        sum = i + 1;
-        // document.getElementById("quantity").innerHTML;
-        console.log("Pet Number: ", sum);
-        // console.log("i", i);
+    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);
+    petSALON.pets.push(newPet);
+    console.log(petSALON.pets);
 }
-    }
 
-quantity();
+function init(){
+    let pet1 = new Pet("Scooby", 79,"Male","Grooming");//this line is declaring an obj
+    let pet2 = new Pet("Scrappy", 79,"Male","Grooming");//this line is declaring an obj
+    petSALON.pets.push(pet1);
+    petSALON.pets.push(pet2);
+    console.log(pet1);
+    console.table(petSALON.pets);
+}
 
-
+window.onload=init;//waiting to render the HTML

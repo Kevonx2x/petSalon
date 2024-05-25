@@ -4,28 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stlyes/mystyles.css">
 </head>
 <body>
-    <header>
-        <div>
-            <h2>Furry Merica</h2>
+    <header class="site-init">
+        <div class="menu-bar">
+            <h1>The Fashion Pet</h1>
 
             <nav>
-                <a href="/">About Us</a>
-                <a href="/">Contact Us</a>
+                <a href="index.html">About Us</a>
+                <a href="register.html">Contact Us</a>
             </nav>
 
         </div>
-        <div>
-            
+        <div class="header-info container">
+            <div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos repudiandae nisi fugiat sed optio fugit hic temporibus totam itaque? Saepe at hic necessita tibus similique eveniet repellendus corrupti quos sapiente repellat!</p>
+            </div>
             <div id="quantity"></div>
             <div id="petNames">Pet Names</div>
+        </div>
+        <div>
+            <img src="./">
         </div>
     
     </header>
     <main>
-
+        <h2>Register a new pet </h2>
+        <div>
+            <div class="input-control">
+                <label>Name:*</label>
+                <input type="text" id="txtName">
+            </div>
+            <div class="input-control">
+                <label>Age:</label>
+                <input type="number" id="txtAge">
+            </div>
+            <div class="input-control">
+                <label>Gender:</label>
+                <input type="text" id="txtGender">
+            </div>
+            <div class="input-control">
+                <label>Breed</label>
+                <select id="txtBreed" >
+                    <optgroup label="Dog">
+                    <option value=""> German Shepherd </option>
+                    <option value=""> Dachshund </option>
+                    <option value=""> Poodle </option>
+                    <option value=""> Bulldog </option>
+                    <option value=""> Border Collie </option>
+                    <option value=""> Beagle </option>
+                    <option value=""> Bully </option>
+                    </optgroup>
+                    <optgroup label="Cat">
+                    <option value=""> Persian Cat </option>
+                    <option value=""> British Shorthair </option>
+                    <option value=""> American Shorthair </option>
+                    <option value=""> Maine Coon </option>
+                    <option value=""> Ragdoll </option>
+                    <option value=""> Siamese </option>
+                    </optgroup>
+                    <optgroup label="Dog">
+                    <option value=""> White-Footed Mice </option>
+                    <option value=""> Deer Mice </option>
+                    <option value=""> Wood Mice </option>
+                    <option value=""> Meadow Voles </option>
+                    <option value=""> Eurasian Harvest Mice </option>
+                    <option value=""> Cactus Mice </option>
+                    </optgroup>
+                    </select>
+            </div>
+            <div class="input-control">
+                <label>Service:*</label>
+                <select id="txtService" >
+                    <option value=""> Grooming </option>
+                    <option value=""> Vaccine </option>
+                </select>
+            </div>
+            
+            <div class="btn-container">
+                <button class="btn btn-primary" onclick="register();">Register</button>
+            </div>
+        </div>
     </main>
     <footer>
 

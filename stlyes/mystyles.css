@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* utilities */
+.container{
+    width:80%;
+    margin:1rem auto;
+}
+/* headers */
+.site-init{
+    background-color: orange;
+    height: 50vh;
+}
+
+.menu-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.header-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
