@@ -4,92 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="stlyes/mystyles.css">
+    <title>Document</title>
 </head>
+
 <body>
     <header class="site-init">
         <div class="menu-bar">
             <h1>The Fashion Pet</h1>
-
-            <nav>
+            <nav class="menu">
                 <a href="index.html">About Us</a>
-                <a href="register.html">Contact Us</a>
+                <a href="register.html">Register</a>
             </nav>
-
         </div>
-        <div class="header-info container">
-            <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos repudiandae nisi fugiat sed optio fugit hic temporibus totam itaque? Saepe at hic necessita tibus similique eveniet repellendus corrupti quos sapiente repellat!</p>
-            </div>
-            <div id="quantity"></div>
-            <div id="petNames">Pet Names</div>
-        </div>
-        <div>
-            <img src="./">
-        </div>
-    
     </header>
     <main>
-        <h2>Register a new pet </h2>
-        <div>
-            <div class="input-control">
-                <label>Name:*</label>
-                <input type="text" id="txtName">
+        <h2>Register a new pet</h2>
+        <div class="form-container">
+            <div class="mb-3">
+                <label class="form-label">Name:*</label>
+                <input class="form-control" type="text" id="txtName">
             </div>
-            <div class="input-control">
-                <label>Age:</label>
-                <input type="number" id="txtAge">
+            <div class="mb-3">
+                <label class="form-label">Age:</label>
+                <input class="form-control" type="number" id="txtAge">
             </div>
-            <div class="input-control">
-                <label>Gender:</label>
-                <input type="text" id="txtGender">
+            <div class="mb-3">
+                <label class="form-label">Gender:</label><br>
+                <input type="radio" name="gender" id="txtGender" value="Male">
+                <label for="maleGender">Male</label>
+                <input type="radio" name="gender" id="txtGender" value="Female">
+                <label for="femaleGender">Female</label>
             </div>
-            <div class="input-control">
-                <label>Breed</label>
-                <select id="txtBreed" >
+            <div class="mb-3">
+                <label>Breed:</label>
+                <select id="txtBreed" class="form-select">
                     <optgroup label="Dog">
-                    <option value=""> German Shepherd </option>
-                    <option value=""> Dachshund </option>
-                    <option value=""> Poodle </option>
-                    <option value=""> Bulldog </option>
-                    <option value=""> Border Collie </option>
-                    <option value=""> Beagle </option>
-                    <option value=""> Bully </option>
+                        <option value="German Shepherd">German Shepherd</option>
+                        <option value="Dachshund">Dachshund</option>
+                        <option value="Poodle">Poodle</option>
+                        <option value="Bulldog">Bulldog</option>
+                        <option value="Border Collie">Border Collie</option>
+                        <option value="Beagle">Beagle</option>
+                        <option value="Bully">Bully</option>
                     </optgroup>
                     <optgroup label="Cat">
-                    <option value=""> Persian Cat </option>
-                    <option value=""> British Shorthair </option>
-                    <option value=""> American Shorthair </option>
-                    <option value=""> Maine Coon </option>
-                    <option value=""> Ragdoll </option>
-                    <option value=""> Siamese </option>
+                        <option value="Persian Cat">Persian Cat</option>
+                        <option value="British Shorthair">British Shorthair</option>
+                        <option value="American Shorthair">American Shorthair</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="Ragdoll">Ragdoll</option>
+                        <option value="Siamese">Siamese</option>
                     </optgroup>
-                    <optgroup label="Dog">
-                    <option value=""> White-Footed Mice </option>
-                    <option value=""> Deer Mice </option>
-                    <option value=""> Wood Mice </option>
-                    <option value=""> Meadow Voles </option>
-                    <option value=""> Eurasian Harvest Mice </option>
-                    <option value=""> Cactus Mice </option>
+                    <optgroup label="Mouse">
+                        <option value="White-Footed Mouse">White-Footed Mouse</option>
+                        <option value="Deer Mouse">Deer Mouse</option>
+                        <option value="Wood Mouse">Wood Mouse</option>
+                        <option value="Meadow Voles">Meadow Voles</option>
+                        <option value="Eurasian Harvest Mouse">Eurasian Harvest Mouse</option>
+                        <option value="Cactus Mouse">Cactus Mouse</option>
                     </optgroup>
-                    </select>
+                </select>
             </div>
-            <div class="input-control">
+            <div class="mb-3">
                 <label>Service:*</label>
-                <select id="txtService" >
-                    <option value=""> Grooming </option>
-                    <option value=""> Vaccine </option>
+                <select id="txtService" class="form-select">
+                    <option value="" selected disabled>--Select A Service--</option>
+                    <option value="Grooming">Grooming</option>
+                    <option value="Vaccine">Vaccine</option>
                 </select>
             </div>
             
             <div class="btn-container">
-                <button class="btn btn-primary" onclick="register();">Register</button>
+                <button class="btn btn-warning" onclick="register();">Register</button>
             </div>
         </div>
     </main>
-    <footer>
+    <section class="container">
+        <h2>Registered pets</h2>
+        <div class="info">
+            <p>Total = <span id="total">1000</span></p>
+            <p>Grooming = <span id="totalGroomings">1000</span></p>
+            <p>Vaccine = <span id="totalVaccine">1000</span></p>
+        </div>
+        <!-- <div id="petDiv">
 
-    </footer>
+        </div> -->
+
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Breed</th>
+                    <th>Service</th>
+                </tr>
+            </thead>
+            
+            <tbody id="petTable">
+
+            </tbody>
+        </table>
+    </section>
     <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
+
+
 </body>
 </html>
