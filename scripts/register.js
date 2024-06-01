@@ -1,4 +1,4 @@
-let petSalon = {
+let petSalon = {//Create our object
     name:"The Fashion pet",
     phone:"555-555-5555", 
     hours:{
@@ -10,12 +10,12 @@ let petSalon = {
 
 // constructor
 function Pet(name, age, gender, breed, service) {
-    // properties = parameter
-    this.name=name;
-    this.age=age;
-    this.gender=gender;
-    this.breed=breed;
-    this.service=service;
+    // properties = parameter(Remember the parameters hold the values!!!)
+    this.name = name;       // Assign the name parameter to the name property
+    this.age = age;         // Assign the age parameter to the age property
+    this.gender = gender;   // Assign the gender parameter to the gender property
+    this.breed = breed;     // Assign the breed parameter to the breed property
+    this.service = service; // Assign the service parameter to the service property
 }
 // ----------------------------------------------------------------------------------------------------------
 
@@ -39,21 +39,33 @@ function isValid (aPet) {
 
 //creating the obj
 function register() {
-    let inputName = document.getElementById("txtName").value;
+    let inputName = document.getElementById("txtName").value;//T
     let inputAge = document.getElementById("txtAge").value;
     let inputGender = document.getElementById("txtGender").value;
     let inputBreed = document.getElementById("txtBreed").value;
     let inputService = document.getElementById("txtService").value;
 
-    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);
+    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);//This is calling Pet from
+    //(continued) from the object constructor. 
     if(isValid(newPet)){// is Valid?
     petSalon.pets.push(newPet);//adding the pet to the array
     // displayCards();
     displayRows();
     displayTotalPets();
     displayServiceCount();
+    displayPetCounts();
     
     }
+}
+// ----------------------------------------------------------------------------------------------------------
+function deletePet(index) {
+    console.log("Deleting pet at index:", index);
+    petSalon.pets.splice(index, 1);
+    console.log("Pets after deletion:", petSalon.pets);
+    displayRows(); // Refresh the displayed rows after deletion
+    displayTotalPets();
+    displayServiceCount();
+    displayPetCounts();
 }
 // ----------------------------------------------------------------------------------------------------------
 function init() {
@@ -66,6 +78,7 @@ function init() {
     displayRows();
     displayTotalPets();
     displayServiceCount();
+    displayPetCounts();
     // console.table(petSalon.pets);
 }
 
