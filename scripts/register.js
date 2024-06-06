@@ -37,24 +37,38 @@ function isValid (aPet) {
     
 }
 
-//creating the obj
+//creating the obj v
 function register() {
-    let inputName = document.getElementById("txtName").value;//T
-    let inputAge = document.getElementById("txtAge").value;
-    let inputGender = document.getElementById("txtGender").value;
-    let inputBreed = document.getElementById("txtBreed").value;
-    let inputService = document.getElementById("txtService").value;
+    // Registering a new service
+    let inputDescription = document.getElementById("txtDescription").value;
 
-    let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);//This is calling Pet from
-    //(continued) from the object constructor. 
-    if(isValid(newPet)){// is Valid?
-    petSalon.pets.push(newPet);//adding the pet to the array
-    // displayCards();
-    displayRows();
-    displayTotalPets();
-    displayServiceCount();
-    displayPetCounts();
-    
+    if (inputDescription) {
+        let inputPrice = document.getElementById("txtPrice").value;
+        let newService = {
+            description: inputDescription,
+            price: inputPrice
+        };
+
+        services.push(newService);
+        displayCards(); // Call the display function after registering the service
+    } else {
+        // Registering a new pet
+        let inputName = document.getElementById("txtName").value;
+        let inputAge = document.getElementById("txtAge").value;
+        let inputGender = document.getElementById("txtGender").value;
+        let inputBreed = document.getElementById("txtBreed").value;
+        let inputService = document.getElementById("txtService").value;
+
+        let newPet = new Pet(inputName, inputAge, inputGender, inputBreed, inputService);
+        
+        if (isValid(newPet)) {
+            petSalon.pets.push(newPet);
+            displayRows();
+            displayTotalPets();
+            displayServiceCount();
+            displayPetCounts();
+            displayCards();
+        }
     }
 }
 // ----------------------------------------------------------------------------------------------------------
@@ -74,7 +88,7 @@ function init() {
     petSalon.pets.push(pet1);
     petSalon.pets.push(pet2);
     // console.log(pet1);
-    // displayCards();
+    displayCards();
     displayRows();
     displayTotalPets();
     displayServiceCount();

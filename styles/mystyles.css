@@ -120,6 +120,16 @@ a{
     background-color: #dedede;
     padding: 1rem;
 }
+#serviceDiv{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: 1rem;
+    row-gap:1rem;
+}
+.serviceCard{
+    background-color: black;
+    padding: 1rem;
+}
 
 .img-container{
         display: flex;
@@ -131,10 +141,12 @@ a{
 
 
 .img-details {
-    width: 600px;
+    width: 250px;
     padding:0;
     height: auto;
-    margin-top: 550px;
+    margin-top: -50px;
+    transform: translateX(25em);
+
 }
 .image-container {
     display: flex;

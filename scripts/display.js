@@ -21,6 +21,25 @@
 
 // }
 
+function displayCards() {
+    let serviceContainer = document.getElementById("serviceContainer");
+    let card = "";
+
+    for (let i = 0; i < services.length; i++) {
+        let service = services[i];
+        
+        card += `
+            <div class="serviceCard">
+                <h4>${service.description}</h4>
+                <p>${service.price}</p>
+            </div>
+        `;
+    }
+    
+    serviceContainer.innerHTML = card; // Update the container with the service cards
+}
+
+
 function displayRows() {
     let rows ="";
     const petTable=document.getElementById("petTable");

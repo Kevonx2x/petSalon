@@ -14,7 +14,7 @@ function isValid(service) {
         $("#txtDescription").addClass("alert-error");
     }
 
-    
+    return validation;
 }
 
 
@@ -27,7 +27,7 @@ function register() {
     let newService = new Service(inputDescription, inputPrice);
     //display it on the console
     if(isValid(newService)) {
-        console.log(newService);
+        saveItem(newService);
         $("input").val("");
     }
 }
