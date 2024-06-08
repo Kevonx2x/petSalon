@@ -63,7 +63,7 @@
                         <option value="Mouse">Wood Mouse</option>
                         <option value="Mouse">Meadow Voles</option>
                         <option value="Mouse">Eurasian Harvest Mouse</option>
-                        <option value="Cactus Mouse">Cactus Mouse</option>
+                        <option value="Mouse">Cactus Mouse</option>
                     </optgroup>
                 </select>
             </div>
@@ -71,8 +71,6 @@
                 <label class="form-label" for="txtService">Service:*</label>
                 <select id="txtService" class="form-select" required>
                     <option value="" selected disabled>--Select A Service--</option>
-                    <option value="Grooming">Grooming</option>
-                    <option value="Vaccine">Vaccine</option>
                 </select>
             </div>
             <div class="btn-container">
@@ -90,7 +88,6 @@
             <p>Cats = <span id="totalCats">0</span></p>
             <p>Mice = <span id="totalMice">0</span></p>
         </div>
-        </div>
         <table class="table">
             <thead>
                 <tr class="table-info">
@@ -106,7 +103,8 @@
             </tbody>
         </table>
     </section>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="scripts/storeManager.js"></script>
     <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
 </body>

@@ -36,27 +36,28 @@
                 <input class="form-control" type="number" id="txtPrice">
             </div>            
             <div class="btn-container">
-                <button class="custom-gradient-btn" onclick="register();">Register</button>
+                <button class="custom-gradient-btn" onclick="register();">Submit</button>
             </div>
         </div>
     </main>
-    <section>
-        <h2>Suggested Services</h2>
-        <div id="serviceContainer"></div>
+    <section class="container">
+        <h2>Services</h2>
+
+        <table class="table" id="petService"> 
+            <thead>
+                <tr class="table-info">
+                    <th>Services</th>
+                    <th>Price</th>
+
+                </tr>
+            </thead>
+            <tbody id="petTable">
+            </tbody>
+        </table>
     </section>
-    
-    <!-- <section>
-        <div  class="serviceCard">
-
-        </div>
-        <h2>Suggested Services</h2>
-        <div id="serviceDiv">
-
-        </div>
-    </section> -->
-
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="./scripts/storeManager.js"></script>
     <script src="./scripts/services.js"></script>
+    <!-- <script src="./scripts/register.js"></script> -->
 </body>
 </html>

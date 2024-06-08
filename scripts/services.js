@@ -1,4 +1,6 @@
-//use Jquery
+let petSalon={
+    service:[ ],
+}
 
 //Create a constructor
 function Service(descripton, price) {
@@ -30,4 +32,28 @@ function register() {
         saveItem(newService);
         $("input").val("");
     }
+    displayServices();
+}
+
+// Function to display services in a table
+function displayServices() {
+    const petService = $("#petService");
+    petService.empty();
+    for (let i = 0; i < petSalon.services.length; i++) {
+        let service = petSalon.services[i];
+        let row = `
+            <tr>
+                <td>${service.description}</td>
+                <td>${service.price}</td>
+                <td><button class="custom-gradient-btn" onclick="deleteService(${i})">Delete</button></td>
+            </tr>
+        `;
+        petService.append(row);
+    }
+}
+
+// Function to delete a service
+function deleteService(index) {
+    petSalon.services.splice(index, 1);
+    displayServices();
 }

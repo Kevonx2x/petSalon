@@ -1,44 +1,48 @@
-// function displayCards(){
-//     //declare the variables
-//     let card="";
-//     const petDiv=document.getElementById("petDiv");
-//     // travel the array of pets
-//     for(let i = 0;i < petSalon.pets.length; i++){
-//         let pet = petSalon.pets[i];
-//         //create the HTML template
-//         card += `
-//         <div class="petCard">
-//             <h4>${pet.name}</h4>
-//             <p>${pet.age}</p>
-//             <p>${pet.gender}</p>
-//             <p>${pet.breed}</p>
-//             <p>${pet.service}</p>
-//         </div>
-//         `;
-//     }
-//     //insert the tmp into the HTMLs
-//     petDiv.innerHTML = card;
-
-// }
-
-function displayCards() {
-    let serviceContainer = document.getElementById("serviceContainer");
-    let card = "";
-
-    for (let i = 0; i < services.length; i++) {
-        let service = services[i];
-        
+function displayCards(){
+    //declare the variables
+    let card="";
+    const petDiv=document.getElementById("petDiv");
+    // travel the array of pets
+    for(let i = 0;i < petSalon.pets.length; i++){
+        let pet = petSalon.pets[i];
+        //create the HTML template
         card += `
-            <div class="serviceCard">
-                <h4>${service.description}</h4>
-                <p>${service.price}</p>
-            </div>
+        <div class="petCard">
+            <h4>${pet.name}</h4>
+            <p>${pet.age}</p>
+            <p>${pet.gender}</p>
+            <p>${pet.breed}</p>
+            <p>${pet.service}</p>
+            <button  class="custom-gradient-btn" onclick="deletePet(${i})">Delete</button></td>
+        </div>
         `;
     }
-    
-    serviceContainer.innerHTML = card; // Update the container with the service cards
+    petDiv.innerHTML += card;
 }
 
+function displayTotalPets(){
+    document.getElementById("total").innerHTML=petSalon.pets.length;
+}
+
+function displayServiceCount(){
+    let grooming=0;
+    for(let i=0; i < petSalon.pets.length; i++){
+        let pet = petSalon.pets[i];
+        if(pet.service === "Grooming") {
+            grooming++;
+        }
+    }
+    document.getElementById("totalGroomings").innerHTML=grooming;
+    
+    let vaccine = 0;
+    for(let i=0; i < petSalon.pets.length; i++){
+        let pet = petSalon.pets[i];
+        if(pet.service === "Vaccine") {
+            vaccine++;
+        }
+    }
+    document.getElementById("totalVaccine").innerHTML=vaccine;
+}
 
 function displayRows() {
     let rows ="";
@@ -63,31 +67,28 @@ function displayRows() {
     petTable.innerHTML += rows;
 }
 
+// function displayServiceRows() {
+//     let servicerows ="";
+//     const petTable=document.getElementById("petTableService");
+//     petTable.innerHTML="";
 
-function displayTotalPets(){
-    document.getElementById("total").innerHTML=petSalon.pets.length;
-}
+//     for(let i = 0; i < petSalon.pets.length; i++){
+//         let pet = petSalon.pets[i];
 
-function displayServiceCount(){
-    let grooming = 0;
-    for(let i=0; i < petSalon.pets.length; i++){
-        let pet = petSalon.pets[i];
-        if(pet.service === "Grooming") {
-            grooming++;
-        }
-    }
-    document.getElementById("totalGroomings").innerHTML=grooming;
-    
-    let vaccine = 0;
-    for(let i=0; i < petSalon.pets.length; i++){
-        let pet = petSalon.pets[i];
-        if(pet.service === "Vaccine") {
-            vaccine++;
-        }
-    }
-    document.getElementById("totalVaccine").innerHTML=vaccine;
-}
+//         serviceRows += `
+//             <tr class="table-light">
+//                 <td>${pet.name}</td>
+//                 <td>${pet.age}</td>
+//                 <td>${pet.gender}</td>
+//                 <td>${pet.breed}</td>
+//                 <td>${pet.service}</td>
+//                 <td><button  class="custom-gradient-btn" onclick="deletePet(${i})">Delete</button></td>
+//             </tr>
+//         `;
+//     }
 
+//     petTableService.innerHTML += serviceRows;
+// }
     function displayPetCounts() {
         let dogCount = 0;
         let catCount = 0;
